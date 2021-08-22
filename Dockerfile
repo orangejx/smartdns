@@ -1,10 +1,9 @@
-FROM alpine
+FROM alpine:3.14.1
 
-LABEL maintainer="Ghostry <ghostry.green@gmail.com>"
+LABEL maintainer="William <x@ora.pub>"
 
-RUN wget https://github.com/pymumu/smartdns/releases/download/Release33/smartdns.1.2020.09.08-2235.x86_64-linux-all.tar.gz \
-  && tar zxvf smartdns.*.tar.gz \
-  && mv smartdns/usr/sbin/smartdns /bin/smartdns \
+RUN wget https://github.com/pymumu/smartdns/releases/download/Release34/smartdns-aarch64 \
+  && mv smartdns-aarch64 /bin/smartdns \
   && chmod +x /bin/smartdns \
   && rm -rf smartdns*
 
